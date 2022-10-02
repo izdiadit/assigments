@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPrintModule } from 'ngx-print';
 
@@ -15,10 +16,11 @@ import { MatButtonModule } from '@angular/material/button';
 
 import 'hammerjs';
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    MenuComponent
-  ],
+    MenuComponent,
+      DishdetailComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
