@@ -1,6 +1,6 @@
 <div
   class="container"
-  fxLayout="row"
+  fxLayout="row wrap"
   fxLayout.sm="column"
   fxLayout.xs="column"
   fxLayoutAlign.gt-md="space-around center"
@@ -8,23 +8,22 @@
   fxLayoutGap.xs="0"
 >
   <div fxFlex="40">
-    <p>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            <h3>{{ dish.name | uppercase }}</h3>
-          </mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="{{ dish.image }}" alt="{{ dish.name }}" />
-        <mat-card-content>
-          <p>{{ dish.description }}</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
-    </p>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>{{ dish.name | uppercase }}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{ dish.image }}" alt="{{ dish.name }}" />
+      <mat-card-content>
+        <p>{{ dish.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="goBack()">BACK</button>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 
   <div fxFlex="40">
@@ -40,8 +39,9 @@
             {{ comment.comment }},<br />
             {{ comment.rating }} Stars<br />- - {{ comment.author }}
             {{ comment.date | date }}<br /><br />
-          </p></div
-      ></mat-card-content>
+          </p>
+        </div>
+      </mat-card-content>
     </mat-card>
   </div>
 </div>
